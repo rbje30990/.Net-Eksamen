@@ -46,9 +46,9 @@ namespace Rema1000.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Kilograms = table.Column<double>(type: "real", nullable: false),
+                    Kilograms = table.Column<double>(type: "float", nullable: false),
                     QuantityInPackage = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<double>(type: "real", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     SupplierId = table.Column<int>(type: "int", nullable: false)
@@ -68,6 +68,35 @@ namespace Rema1000.Migrations
                         principalTable: "Supplier",
                         principalColumn: "SupplierId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "CategoryId", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "You will eat it all day", "Cakes" },
+                    { 2, "Used after eating cake", "Toothpaste" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Supplier",
+                columns: new[] { "SupplierId", "Address", "ContactPerson", "Email", "Name", "PhoneNumber", "ZipCode" },
+                values: new object[,]
+                {
+                    { 1, "Abildvej", "Mike Johnson", "mikeJohn@gmail.com", "Mike Johnson", "+45 32 53 23 95", 7100 },
+                    { 2, "Frejasgade", "Susanne Jensen", "susjensen@gmail.com", "Susanne Jensen", "+45 74 66 84 61", 8700 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Product",
+                columns: new[] { "ProductId", "CategoryId", "Description", "Kilograms", "Name", "Price", "QuantityInPackage", "Stock", "SupplierId" },
+                values: new object[,]
+                {
+                    { 1, 1, "Yes please", 1.5, "Cheesecake", 250.0, 1, 30, 1 },
+                    { 3, 2, "Wonderful taste", 0.10000000000000001, "Colgate", 20.989999999999998, 3, 1400, 1 },
+                    { 2, 1, "But what about Andrea?", 2.3999999999999999, "KajKage", 50.0, 5, 1001, 2 },
+                    { 4, 2, "Healthy mouth control paste", 0.20000000000000001, "Jason", 35.0, 1, 100, 2 }
                 });
 
             migrationBuilder.CreateIndex(

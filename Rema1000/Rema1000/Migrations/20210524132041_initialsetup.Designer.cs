@@ -9,8 +9,8 @@ using Rema1000.Data;
 namespace Rema1000.Migrations
 {
     [DbContext(typeof(Rema1000Context))]
-    [Migration("20210524124746_SeedTable")]
-    partial class SeedTable
+    [Migration("20210524132041_initialsetup")]
+    partial class initialsetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
