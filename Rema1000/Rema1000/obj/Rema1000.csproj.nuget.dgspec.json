@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Dotnet eksamen\\Eksamen\\Rema1000\\Rema1000\\Rema1000.csproj": {}
+    "A:\\Dotnet eksamen\\Backup\\Nyeste\\Rema1000\\Rema1000\\Rema1000.csproj": {}
   },
   "projects": {
-    "A:\\Dotnet eksamen\\Eksamen\\Rema1000\\Rema1000\\Rema1000.csproj": {
+    "A:\\Dotnet eksamen\\Backup\\Nyeste\\Rema1000\\Rema1000\\Rema1000.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Dotnet eksamen\\Eksamen\\Rema1000\\Rema1000\\Rema1000.csproj",
+        "projectUniqueName": "A:\\Dotnet eksamen\\Backup\\Nyeste\\Rema1000\\Rema1000\\Rema1000.csproj",
         "projectName": "Rema1000",
-        "projectPath": "A:\\Dotnet eksamen\\Eksamen\\Rema1000\\Rema1000\\Rema1000.csproj",
+        "projectPath": "A:\\Dotnet eksamen\\Backup\\Nyeste\\Rema1000\\Rema1000\\Rema1000.csproj",
         "packagesPath": "A:\\Users\\runeb\\.nuget\\packages\\",
-        "outputPath": "A:\\Dotnet eksamen\\Eksamen\\Rema1000\\Rema1000\\obj\\",
+        "outputPath": "A:\\Dotnet eksamen\\Backup\\Nyeste\\Rema1000\\Rema1000\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -46,9 +46,9 @@ namespace Rema1000.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Kilograms = table.Column<float>(type: "real", nullable: false),
+                    Kilograms = table.Column<double>(type: "real", nullable: false),
                     QuantityInPackage = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<float>(type: "real", nullable: false),
+                    Price = table.Column<double>(type: "real", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     SupplierId = table.Column<int>(type: "int", nullable: false)

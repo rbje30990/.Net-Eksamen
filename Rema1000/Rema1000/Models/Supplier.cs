@@ -17,8 +17,6 @@ namespace Eksamensprojekt_Rema1000.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
-        // Navigation property
-        public ICollection<Product> Products { get; set; }
 
     }
 }

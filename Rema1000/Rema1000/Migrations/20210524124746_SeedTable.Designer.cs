@@ -9,8 +9,8 @@ using Rema1000.Data;
 namespace Rema1000.Migrations
 {
     [DbContext(typeof(Rema1000Context))]
-    [Migration("20210522221931_initialsetup")]
-    partial class initialsetup
+    [Migration("20210524124746_SeedTable")]
+    partial class SeedTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,20 @@ namespace Rema1000.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Description = "You will eat it all day",
+                            Name = "Cakes"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            Description = "Used after eating cake",
+                            Name = "Toothpaste"
+                        });
                 });
 
             modelBuilder.Entity("Eksamensprojekt_Rema1000.Models.Product", b =>
@@ -51,14 +65,14 @@ namespace Rema1000.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Kilograms")
-                        .HasColumnType("real");
+                    b.Property<double>("Kilograms")
+                        .HasColumnType("float");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<int>("QuantityInPackage")
                         .HasColumnType("int");
@@ -76,6 +90,56 @@ namespace Rema1000.Migrations
                     b.HasIndex("SupplierId");
 
                     b.ToTable("Product");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            CategoryId = 1,
+                            Description = "Yes please",
+                            Kilograms = 1.5,
+                            Name = "Cheesecake",
+                            Price = 250.0,
+                            QuantityInPackage = 1,
+                            Stock = 30,
+                            SupplierId = 1
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            CategoryId = 1,
+                            Description = "But what about Andrea?",
+                            Kilograms = 2.3999999999999999,
+                            Name = "KajKage",
+                            Price = 50.0,
+                            QuantityInPackage = 5,
+                            Stock = 1001,
+                            SupplierId = 2
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            CategoryId = 2,
+                            Description = "Wonderful taste",
+                            Kilograms = 0.10000000000000001,
+                            Name = "Colgate",
+                            Price = 20.989999999999998,
+                            QuantityInPackage = 3,
+                            Stock = 1400,
+                            SupplierId = 1
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            CategoryId = 2,
+                            Description = "Healthy mouth control paste",
+                            Kilograms = 0.20000000000000001,
+                            Name = "Jason",
+                            Price = 35.0,
+                            QuantityInPackage = 1,
+                            Stock = 100,
+                            SupplierId = 2
+                        });
                 });
 
             modelBuilder.Entity("Eksamensprojekt_Rema1000.Models.Supplier", b =>
@@ -106,18 +170,40 @@ namespace Rema1000.Migrations
                     b.HasKey("SupplierId");
 
                     b.ToTable("Supplier");
+
+                    b.HasData(
+                        new
+                        {
+                            SupplierId = 1,
+                            Address = "Abildvej",
+                            ContactPerson = "Mike Johnson",
+                            Email = "mikeJohn@gmail.com",
+                            Name = "Mike Johnson",
+                            PhoneNumber = "+45 32 53 23 95",
+                            ZipCode = 7100
+                        },
+                        new
+                        {
+                            SupplierId = 2,
+                            Address = "Frejasgade",
+                            ContactPerson = "Susanne Jensen",
+                            Email = "susjensen@gmail.com",
+                            Name = "Susanne Jensen",
+                            PhoneNumber = "+45 74 66 84 61",
+                            ZipCode = 8700
+                        });
                 });
 
             modelBuilder.Entity("Eksamensprojekt_Rema1000.Models.Product", b =>
                 {
                     b.HasOne("Eksamensprojekt_Rema1000.Models.Category", "Category")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Eksamensprojekt_Rema1000.Models.Supplier", "Supplier")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -125,16 +211,6 @@ namespace Rema1000.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Supplier");
-                });
-
-            modelBuilder.Entity("Eksamensprojekt_Rema1000.Models.Category", b =>
-                {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("Eksamensprojekt_Rema1000.Models.Supplier", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

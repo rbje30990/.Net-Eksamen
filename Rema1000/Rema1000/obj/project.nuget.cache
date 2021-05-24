@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4cB+xC6sbbA03c+n9/n6Bo9fCpAYpQDJGgc9+GxKTWmV+zAkfIn7QmtHSUadAjLYfojksPRdNgf0YoTtPKW+jA==",
+  "dgSpecHash": "1uJ3i6/H7cEJEdCJIW8j8z2tQQ7x7k90w4Z8TbMXK3nesqvS70sP1b6whNRi3O/SLcOAG1ciAQUQ7Oljwt8DyA==",
   "success": true,
-  "projectFilePath": "A:\\Dotnet eksamen\\Eksamen\\Rema1000\\Rema1000\\Rema1000.csproj",
+  "projectFilePath": "A:\\Dotnet eksamen\\Backup\\Nyeste\\Rema1000\\Rema1000\\Rema1000.csproj",
   "expectedPackageFiles": [
     "A:\\Users\\runeb\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "A:\\Users\\runeb\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",

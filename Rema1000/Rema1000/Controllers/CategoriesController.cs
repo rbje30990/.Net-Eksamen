@@ -56,7 +56,6 @@ namespace Rema1000.Controllers
         }
 
         // PUT: api/Categories/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategory(int id, Category category)
         {
@@ -87,7 +86,6 @@ namespace Rema1000.Controllers
         }
 
         // POST: api/Categories
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {

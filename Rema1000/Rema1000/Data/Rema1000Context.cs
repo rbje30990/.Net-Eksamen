@@ -12,6 +12,7 @@ namespace Rema1000.Data
         public Rema1000Context (DbContextOptions<Rema1000Context> options)
             : base(options)
         {
+
         }
 
         public DbSet<Eksamensprojekt_Rema1000.Models.Category> Category { get; set; }
@@ -19,5 +20,12 @@ namespace Rema1000.Data
         public DbSet<Eksamensprojekt_Rema1000.Models.Supplier> Supplier { get; set; }
 
         public DbSet<Eksamensprojekt_Rema1000.Models.Product> Product { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.CategorySeed();
+            modelBuilder.SupplierSeed();
+            modelBuilder.ProductSeed();
+        }
     }
 }
